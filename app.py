@@ -1,7 +1,6 @@
 from app import create_app
 from config import Config
 import os
-from app import create_app
 
 # Crear la aplicación usando la factory function
 app = create_app()
