@@ -1,10 +1,8 @@
-from app import create_app
-from config import Config
 import os
+from app import create_app
 
-# Crear la aplicación usando la factory function
+# Crear aplicación
 app = create_app()
-
 if __name__ == '__main__':
     # Configuración para producción
     port = int(os.environ.get('PORT', 5000))
