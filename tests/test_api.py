@@ -163,3 +163,13 @@ class TestAPIEndpoints:
         data = json.loads(response.data)
         assert data['success'] is True
         assert data['count'] == 0
+    
+    def test_health_endpoint(self, client):
+        """Test: Health check endpoint works"""
+        response = client.get('/api/health')
+        assert response.status_code == 200
+        assert response.content_type == 'application/json'
+        data = json.loads(response.data)
+        assert data['status'] == 'healthy'
+        assert data['version'] == '1.0.0'
+        assert 'timestamp' in data
