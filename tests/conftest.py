@@ -94,7 +94,7 @@ def flask_test_app():
 def selenium_driver():
     """Fixture que crea un driver de Chrome para testing"""
     chrome_options = Options()
-    #chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--headless')
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--disable-gpu')
@@ -119,7 +119,7 @@ def selenium_driver():
             from webdriver_manager.microsoft import EdgeChromiumDriverManager
             
             edge_options = EdgeOptions()
-            #edge_options.add_argument('--headless')
+            edge_options.add_argument('--headless')
             edge_options.add_argument('--no-sandbox')
             edge_options.add_argument('--disable-dev-shm-usage')
             
